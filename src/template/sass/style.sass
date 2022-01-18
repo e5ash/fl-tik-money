@@ -3,17 +3,166 @@
 @import reset
 @import grid
 
-@import ../components/button/button
-@import ../components/field/field
-@import ../components/check/check
-@import ../components/select/select
-@import ../components/popup/popup
-// @import ../components/tabs/tabs
-// @import ../components/popup/popup
-// @import ../components/slider/slider
-// @import ../components/tog/tog
-
 @import typography
 
 .overflow-disable
-	overflow: hidden
+  overflow: hidden
+
+body
+  color: #fff
+  background: #FE0051
+
+.wrap
+  height: 100%
+  overflow: hidden
+
+.header
+  display: flex
+  align-items: center
+  height: 72px
+  padding-left: 30px
+  padding-right: 24px
+  background: #000000
+  &__switcher
+    margin-left: auto
+    display: flex
+    align-items: center
+    justify-content: center
+    padding-top: 2px
+    font-size: 11px
+    font-weight: 700
+    width: 32px
+    height: 32px
+    border: 2px solid #FFFFFF
+    border-radius: 50%
+
+.main
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-direction: column
+  text-align: center
+  height: calc(100% - 72px)
+  overflow: hidden
+  // padding-bottom: 90px
+
+.title
+  font-size: 24px
+  line-height: 29px
+  font-weight: 700
+  margin-bottom: 20px
+  max-width: 275px
+  width: 100%
+
+.text
+  font-size: 13px
+  line-height: 15.73px
+  max-width: 265px
+  width: 100%
+
+.img
+  margin-top: 10px
+  margin-bottom: 45px
+  img
+    width: auto
+    height: 391px
+
+.button
+  display: flex
+  align-items: center
+  justify-content: center
+  max-width: 245px
+  width: 100%
+  position: relative
+  // position: absolute
+  // left: 50%
+  // bottom: 37px
+  // transform: translateX(-50%)
+  min-height: 60px
+  height: 60px
+  &__text
+    z-index: 2
+    position: relative
+    color: #fff
+    font-size: 24px
+    font-weight: 700
+  &__left, &__right
+    z-index: -1
+    position: absolute
+    top: 0
+    bottom: 0
+    width: 30px
+  &__left
+    left: 0
+    border-radius: 16px 0 0 16px
+    background: #02F4E6
+  &__right
+    right: 0
+    border-radius: 0 16px 16px 0
+    background: #FE0051
+  &:before
+    z-index: 1
+    content: ''
+    position: absolute
+    left: 10px
+    right: 10px
+    top: 0
+    bottom: 0
+    border-radius: 16px
+    background: #000
+
+.round
+  position: absolute
+  // filter: blur(200px)
+  background-repeat: no-repeat
+  background-position: center
+  background-size: cover
+  left: 50%
+  top: 50%
+  transform: translate(-50%, -50%)
+  &:nth-of-type(1)
+    z-index: -1
+    width: 942px
+    height: 942px
+    margin-top: 160px
+    margin-left: -100px
+    background-image: url('../imgs/ellipse-1.svg')
+  &:nth-of-type(2)
+    z-index: -2
+    width: 1195px
+    height: 799px
+    margin-left: 50px
+    margin-top: 300px
+    background-image: url('../imgs/ellipse-2.svg')
+  &:nth-of-type(3)
+    display: none
+    opacity: 0
+    width: 967px
+    height: 1032px
+    background-image: url('../imgs/ellipse-3.svg')
+
+@media screen and (max-height: 790px)
+  .img
+    margin-top: 0
+    margin-bottom: 20px
+
+@media screen and (max-height: 790px)
+  .img
+    img
+      height: 300px 
+
+@media screen and (max-height: 620px)
+  .title
+    margin-bottom: 12px
+  .img
+    height: 240px
+
+@media screen and (max-height: 540px)
+  html, body, .wrap
+    overflow-y: auto
+  .wrap
+    height: auto
+  .main
+    height: 510px
+    position: relative
+    
